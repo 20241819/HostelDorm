@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Student Page - HostelDorm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .student-container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(102,126,234,0.08);
+            padding: 40px 32px;
+        }
+        .student-container h2 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .student-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .student-form .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .student-form label {
+            font-size: 14px;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        .student-form input,
+        .student-form select,
+        .student-form textarea {
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border 0.3s;
+        }
+        .student-form input:focus,
+        .student-form select:focus,
+        .student-form textarea:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+        .student-form .form-row {
+            display: flex;
+            gap: 16px;
+        }
+        .student-form .form-row .form-group {
+            flex: 1;
+        }
+        .student-form .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            padding: 14px 0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 16px rgba(102,126,234,0.08);
+        }
+        .student-form .submit-btn:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 8px 24px rgba(102,126,234,0.15);
+        }
+        .success-message, .error-message {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 15px;
+            border-radius: 6px;
+            padding: 10px 0;
+        }
+        .success-message {
+            color: #38a169;
+            background: #e6fffa;
+        }
+        .error-message {
+            color: #e53e3e;
+            background: #fff5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="student-container">
+        <h2><i class="fas fa-user-graduate"></i> Add New Student</h2>
+        <form class="student-form" id="studentForm" autocomplete="off">
+            <div class="form-group">
+                <label for="studentName">Student Name</label>
+                <input type="text" id="studentName" name="studentName" placeholder="Enter student name" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="studentEmail">Email</label>
+                    <input type="email" id="studentEmail" name="studentEmail" placeholder="Enter email" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentPhone">Phone Number</label>
+                    <input type="tel" id="studentPhone" name="studentPhone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="studentGender">Gender</label>
+                    <select id="studentGender" name="studentGender" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="studentDob">Date of Birth</label>
+                    <input type="date" id="studentDob" name="studentDob" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="studentAddress">Address</label>
+                <textarea id="studentAddress" name="studentAddress" rows="2" placeholder="Enter address" required></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="roomAssignment">Room Assignment</label>
+                    <input type="text" id="roomAssignment" name="roomAssignment" placeholder="e.g. Room 101" required>
+                </div>
+                <div class="form-group">
+                    <label for="admissionDate">Admission Date</label>
+                    <input type="date" id="admissionDate" name="admissionDate" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="guardianName">Guardian Name</label>
+                    <input type="text" id="guardianName" name="guardianName" placeholder="Enter guardian name" required>
+                </div>
+                <div class="form-group">
+                    <label for="guardianContact">Guardian Contact</label>
+                    <input type="tel" id="guardianContact" name="guardianContact" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-user-plus"></i> Add Student</button>
+            <div id="formMessage"></div>
+        </form>
+    </div>
+    <script src="new-student.js"></script>
+</body>
+</html> 

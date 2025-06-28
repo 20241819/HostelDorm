@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page - HostelDorm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .registration-container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(102,126,234,0.08);
+            padding: 40px 32px;
+        }
+        .registration-container h2 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .registration-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .registration-form .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .registration-form label {
+            font-size: 14px;
+            color: #4a5568;
+            font-weight: 500;
+        }
+        .registration-form input,
+        .registration-form select,
+        .registration-form textarea {
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border 0.3s;
+        }
+        .registration-form input:focus,
+        .registration-form select:focus,
+        .registration-form textarea:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+        .registration-form .form-row {
+            display: flex;
+            gap: 16px;
+        }
+        .registration-form .form-row .form-group {
+            flex: 1;
+        }
+        .registration-form .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            border: none;
+            padding: 14px 0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 16px rgba(102,126,234,0.08);
+        }
+        .registration-form .submit-btn:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            box-shadow: 0 8px 24px rgba(102,126,234,0.15);
+        }
+        .success-message, .error-message {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 15px;
+            border-radius: 6px;
+            padding: 10px 0;
+        }
+        .success-message {
+            color: #38a169;
+            background: #e6fffa;
+        }
+        .error-message {
+            color: #e53e3e;
+            background: #fff5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h2><i class="fas fa-user-plus"></i> HostelDorm Registration</h2>
+        <form class="registration-form" id="registrationForm" autocomplete="off">
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="2" placeholder="Enter your address" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="room">Room Preference</label>
+                <select id="room" name="room" required>
+                    <option value="">Select Room</option>
+                    <option value="Single">Single</option>
+                    <option value="Double">Double</option>
+                    <option value="Triple">Triple</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Create a password" required minlength="6">
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password" required minlength="6">
+                </div>
+            </div>
+            <button type="submit" class="submit-btn"><i class="fas fa-user-plus"></i> Register</button>
+            <div id="formMessage"></div>
+        </form>
+    </div>
+    <script src="registration.js"></script>
+</body>
+</html> 

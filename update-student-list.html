@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Student List - HostelDorm</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .students-container {
+            max-width: 900px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(102,126,234,0.08);
+            padding: 40px 32px;
+        }
+        .students-container h2 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 18px;
+        }
+        .search-bar input {
+            padding: 10px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            width: 250px;
+            transition: border 0.3s;
+        }
+        .search-bar input:focus {
+            border-color: #667eea;
+            outline: none;
+        }
+        .students-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 16px;
+        }
+        .students-table th, .students-table td {
+            padding: 12px 10px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: left;
+        }
+        .students-table th {
+            background: #f7fafc;
+            color: #4a5568;
+            font-weight: 600;
+        }
+        .action-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 8px;
+            color: #667eea;
+            transition: color 0.2s;
+        }
+        .action-btn.save {
+            color: #38a169;
+        }
+        .action-btn.cancel {
+            color: #e53e3e;
+        }
+        .action-btn:hover {
+            color: #764ba2;
+        }
+        .action-btn.save:hover {
+            color: #2f855a;
+        }
+        .action-btn.cancel:hover {
+            color: #c53030;
+        }
+        .success-message, .error-message {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 15px;
+            border-radius: 6px;
+            padding: 10px 0;
+        }
+        .success-message {
+            color: #38a169;
+            background: #e6fffa;
+        }
+        .error-message {
+            color: #e53e3e;
+            background: #fff5f5;
+        }
+        @media (max-width: 700px) {
+            .students-container {
+                padding: 20px 5px;
+            }
+            .search-bar input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="students-container">
+        <h2><i class="fas fa-user-edit"></i> Update Student List</h2>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search by name or room...">
+        </div>
+        <table class="students-table" id="studentsTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Room</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Student rows will be inserted here by JS -->
+            </tbody>
+        </table>
+        <div id="formMessage"></div>
+    </div>
+    <script src="update-student-list.js"></script>
+</body>
+</html> 
